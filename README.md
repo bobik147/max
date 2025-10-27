@@ -1,60 +1,61 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png" width="30" style="vertical-align: middle;"> **Max PWA**
 
-Веб-приложение, эмулирующее интерфейс мессенджера Max для iOS устройств с помощью Progressive Web App (PWA) технологии.
+A web application that emulates the Max messenger interface for iOS devices using Progressive Web App (PWA) technology.
 
 ---
 
-## 📋 Описание проекта
+## 📋 Project Description
 
-Данное решение предоставляет альтернативу установки нативного приложения мессенджера Max на iOS устройствах. Проект реализован как **Progressive Web Application**, которое после добавления на главный экран отображает чистый интерфейс без функциональности мессенджера.
+This solution provides an alternative to installing the native Max messenger application on iOS devices. The project is implemented as a **Progressive Web Application** that displays a clean interface without messenger functionality after being added to the home screen.
 
-## 🎯 Предназначение
+## 🎯 Purpose
 
-Проект разработан для людей, которым требуется демонстрация наличия приложения без фактической установки программного обеспечения, сохраняя при этом визуальное соответствие требованиям.
+The project is designed for individuals who need to demonstrate the presence of an application without actually installing the software, while maintaining visual compliance with requirements.
 
-## 🚀 Функциональные особенности
+## 🚀 Functional Features
 
-- **🔗 PWA-реализация** - полноценная поддержка добавления на главный экран iOS
-- **🎨 Визуальная идентичность** - точное соответствие брендингу мессенджера Max  
-- **🔒 Нулевая функциональность** - отсутствие сетевых запросов и обработки данных
-- **📱 Кроссплатформенность** - корректное отображение на всех iOS устройствах
-- **🛡️ Безопасность** - полное отсутствие сбора и передачи пользовательских данных
+- **🔗 PWA Implementation** - Full support for adding to iOS home screen
+- **🎨 Visual Identity** - Exact match with Max messenger branding
+- **🔒 Zero Functionality** - No network requests or data processing
+- **📱 Cross-Platform Compatibility** - Correct display on all iOS devices
+- **🛡️ Security** - Complete absence of user data collection and transmission
 
-## 📱 Установка на iOS устройства
+## 📱 Installation on iOS Devices
 
-### **Стандартная процедура установки PWA:**
+### **Standard PWA Installation Procedure:**
 
-1. **Откройте целевой URL в браузере Safari:**
-  https://bobyo1285.github.io/Max/web
-2. **Инициируйте процесс добавления:**
-- Нажмите кнопку **"Поделиться"** в панели навигации Safari
-- В открывшемся меню выберите **"На экран «Домой»"**
+1. **Open the target URL in Safari browser:**
+  https://bobik147.github.io/max/
+2. **Initiate the addition process:**
+- Tap the **"Share"** button in Safari's navigation panel
+- Select **"Add to Home Screen"** from the opened menu
 
-3. **Завершите установку:**
-- Подтвердите действие кнопкой **"Добавить"** в правом верхнем углу
-- Приложение появится на главном экране устройства
+3. **Complete the installation:**
+- Confirm the action with the **"Add"** button in the upper right corner
+- The application will appear on your device's home screen
 
-## ⚖️ Правовой статус
+## ⚖️ Legal Status
 
-### **Соответствие требованиям:**
-- Проект не нарушает авторские права
-- Используется в образовательных целях  
-- Не осуществляет коммерческую деятельность
-- Не предоставляет функциональность оригинального приложения
+### **Compliance:**
+- The project does not violate copyright
+- Used for educational purposes
+- Does not engage in commercial activities
+- Does not provide the functionality of the original application
 
-### **Ограничения ответственности:**
-> ⚠️ Решение предназначено исключительно для демонстрационных целей и не заменяет функциональность официального приложения мессенджера Max.
+### **Liability Limitations:**
+> ⚠️ The solution is intended for demonstration purposes only and does not replace the functionality of the official Max messenger application.
 
-## 🌐 Доступность
+## 🌐 Availability
 
-**Основной URL для установки:**
-  https://bobyo1285.github.io/Max/web
-## ⚠️ Важные примечания
+**Main installation URL:**
+  https://bobik147.github.io/max/
 
-- ⚠️ **Это решение только создает видимость установленного приложения**
-- ⚠️ **Приложение не осуществляет никакую реальную коммуникацию**  
-- ⚠️ **Фактически это просто веб-страница, добавленная на главный экран**
+## ⚠️ Important Notes
+
+- ⚠️ **This solution only creates the appearance of an installed application**
+- ⚠️ **The application does not perform any real communication**
+- ⚠️ **Essentially, this is just a web page added to the home screen**
 
 ---
 
-*Данный проект не аффилирован с компанией-разработчиком мессенджера Max.*
+*This project is not affiliated with the developer company of the Max messenger.*
