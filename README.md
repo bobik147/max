@@ -26,7 +26,7 @@
 
 1. **Откройте целевой URL в браузере Safari:**
 
-https://bobik147.github.io/max/web/
+[Ссылка](https://bobik147.github.io/max/web/)
 
 2. **Инициируйте процесс добавления:**
 - Нажмите кнопку **"Поделиться"** в панели навигации Safari
@@ -51,7 +51,7 @@ https://bobik147.github.io/max/web/
 
 **Основной URL для установки:**
 
-https://bobik147.github.io/max/web/
+[Ссылка](https://bobik147.github.io/max/web/)
 
 ## ⚠️ Важные примечания
 
