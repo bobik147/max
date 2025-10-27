@@ -25,7 +25,7 @@ The project is designed for individuals who need to demonstrate the presence of 
 ### **Standard PWA Installation Procedure:**
 
 1. **Open the target URL in Safari browser:**
-  https://bobik147.github.io/max/
+  https://bobik147.github.io/max/web/
 2. **Initiate the addition process:**
 - Tap the **"Share"** button in Safari's navigation panel
 - Select **"Add to Home Screen"** from the opened menu
@@ -48,7 +48,7 @@ The project is designed for individuals who need to demonstrate the presence of 
 ## 🌐 Availability
 
 **Main installation URL:**
-  https://bobik147.github.io/max/
+  https://bobik147.github.io/max/web/
 
 ## ⚠️ Important Notes
 
