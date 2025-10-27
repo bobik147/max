@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Max</title>
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="Max">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            color: #333333;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* PWA режим - только чистый белый экран */
+        .pwa-mode {
+            background: #ffffff !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 0 !important;
+        }
+        
+        .pwa-mode .container {
+            display: none !important;
+        }
+        
+        .pwa-mode .logo-pwa {
+            display: none !important;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            background: #f8f9fa;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+            margin: 20px 0;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            border-radius: 22px;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #dee2e6;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #212529;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #495057;
+        }
+        
+        .instructions {
+            background: #e9ecef;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+        
+        .instructions h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+            color: #212529;
+        }
+        
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .steps li {
+            margin-bottom: 20px;
+            padding: 18px 20px;
+            background: #ffffff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+            border: 1px solid #dee2e6;
+            color: #495057;
+        }
+        
+        .steps li i {
+            margin-right: 15px;
+            font-size: 20px;
+            width: 28px;
+            text-align: center;
+            color: #007AFF;
+        }
+        
+        .ios-button {
+            display: inline-flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-weight: 500;
+            margin: 0 6px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            color: #495057;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .ios-button i {
+            margin-right: 8px;
+            font-size: 18px;
+            color: #007AFF;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            min-width: 160px;
+            border: none;
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #007AFF 0%, #0051cc 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover, .btn-primary:active {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: #fff;
+        }
+        
+        .btn-secondary:hover, .btn-secondary:active {
+            background: #5a6268;
+            transform: translateY(-3px);
+        }
+        
+        .btn-info {
+            background: #17a2b8;
+            color: #fff;
+            margin-top: 20px;
+            padding: 14px 28px;
+            font-size: 17px;
+        }
+        
+        .btn-info:hover, .btn-info:active {
+            background: #138496;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            margin-top: 35px;
+            font-size: 16px;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .footer i {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #007AFF;
+        }
+        
+        /* Ориентация для мобильных устройств */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 15px;
+                justify-content: flex-start;
+            }
+            
+            .container {
+                padding: 25px 20px;
+                margin: 10px 0;
+                width: calc(100% - 30px);
+                max-width: none;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .instructions {
+                padding: 25px 20px;
+            }
+            
+            .instructions h2 {
+                font-size: 22px;
+            }
+            
+            .steps li {
+                padding: 15px;
+                font-size: 16px;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .steps li i {
+                margin-right: 0;
+                font-size: 24px;
+            }
+            
+            .ios-button {
+                margin: 5px 0;
+                padding: 10px 15px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 18px 25px;
+                font-size: 17px;
+            }
+            
+            .footer {
+                font-size: 15px;
+                margin-top: 25px;
+            }
+            
+            /* Предотвращение масштабирования при изменении ориентации */
+            @media (orientation: landscape) {
+                body {
+                    padding: 10px;
+                }
+                
+                .container {
+                    max-height: 90vh;
+                    overflow-y: auto;
+                    width: calc(100% - 20px);
+                }
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px 15px;
+                width: calc(100% - 20px);
+                margin: 5px 0;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 20px;
+            }
+            
+            .steps li {
+                padding: 12px;
+                font-size: 15px;
+            }
+            
+            .btn {
+                padding: 16px 20px;
+                font-size: 16px;
+            }
+            
+            /* Ландшафтная ориентация для маленьких экранов */
+            @media (orientation: landscape) {
+                body {
+                    justify-content: flex-start;
+                    padding: 5px;
+                }
+                
+                .container {
+                    max-width: 100%;
+                    margin: 5px 0;
+                    padding: 15px;
+                    width: calc(100% - 10px);
+                }
+                
+                .logo {
+                    width: 60px;
+                    height: 60px;
+                    margin-bottom: 15px;
+                }
+                
+                h1 {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+                
+                .instructions {
+                    padding: 15px;
+                    margin: 15px 0;
+                }
+                
+                .instructions h2 {
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                }
+                
+                .steps li {
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+        
+        /* Специальные стили для PWA режима */
+        .pwa-mode {
+            background: #ffffff !important;
+        }
+        
+        .logo-pwa {
+            display: none;
+        }
+        
+        /* Предотвращение скрытия интерфейса браузера на iOS */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                min-height: -webkit-fill-available;
+            }
+            
+            html {
+                height: -webkit-fill-available;
+            }
+        }
+    </style>
+</head>
+<body class="normal-mode">
+    <div class="logo-pwa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png" alt="Max Logo">
+    </div>
+    
+    <div class="container instructions">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png" alt="Max Logo">
+        </div>
+        
+        <h1>Max</h1>
+        
+        <p>Эта страница предоставляет чистый белый экран. В режиме приложения (после добавления на главный экран) будет отображаться только белый фон.</p>
+        
+        <div class="instructions">
+            <h2>Как установить на iPhone:</h2>
+            <ul class="steps">
+                <li><i class="fas fa-share-square"></i> Нажмите кнопку <span class="ios-button"><i class="fas fa-share"></i> Поделиться</span> внизу браузера Safari</li>
+                <li><i class="fas fa-chevron-down"></i> Прокрутите вниз и выберите <span class="ios-button"><i class="fas fa-plus-circle"></i> На экран «Домой»</span></li>
+                <li><i class="fas fa-check"></i> Нажмите <span class="ios-button"><i class="fas fa-plus"></i> Добавить</span> в правом верхнем углу</li>
+                <li><i class="fas fa-check-circle"></i> Готово! Теперь приложение будет на вашем домашнем экране</li>
+            </ul>
+        </div>
+        
+        <a href="/Max/" class="btn btn-info"><i class="fas fa-info-circle"></i> Подробнее</a>
+    </div>
+
+    <script>
+        // Проверяем, открыто ли как PWA
+        function checkPWA() {
+            if (window.navigator.standalone) {
+                document.body.classList.remove('normal-mode');
+                document.body.classList.add('pwa-mode');
+                document.body.style.background = '#ffffff';
+                document.body.innerHTML = ''; // Полностью очищаем содержимое
+            }
+        }
+        
+        // Проверяем при загрузке
+        document.addEventListener('DOMContentLoaded', checkPWA);
+        
+        // Проверяем при изменении размера (на случай если PWA запускается с задержкой)
+        window.addEventListener('resize', checkPWA);
+        
+        // Дополнительная проверка после полной загрузки
+        window.addEventListener('load', function() {
+            setTimeout(checkPWA, 300);
+        });
+        
+        // Предотвращаем масштабирование на iOS
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+        
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
